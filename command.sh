@@ -11,3 +11,6 @@ docker run -d -p 80:80 --rm \
     feedback-node:volumes
 
 docker stop feedback-app
+
+docker volume ls
+docker volume inspect feedback
