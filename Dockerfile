@@ -14,6 +14,8 @@ ENV PORT=${DEFAULT_PORT}
 
 EXPOSE ${PORT}
 
-VOLUME [ "/app/feedback" ]
+# VOLUME [ "/app/feedback" ]
+
+VOLUME [ "/app/temp" ]
 
 CMD [ "npm", "start" ]
