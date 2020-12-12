@@ -1,0 +1,17 @@
+FROM node:14
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+ARG DEFAULT_BACK_END_PORT=80
+
+ENV BACK_END_PORT $DEFAULT_BACK_END_PORT
+
+CMD [ "npm", "start" ]
