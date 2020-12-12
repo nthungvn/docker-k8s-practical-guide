@@ -9,7 +9,7 @@ docker run -d --rm \
     --network multiple-services \
     -e MONGO_INITDB_ROOT_USERNAME=mongodb \
     -e MONGO_INITDB_ROOT_PASSWORD=root \
-    -v /Users/nthung/Repos/docker-k8s-practical-guide/mount-volume/mongodb:/data/db \
+    -v mongodb-data:/data/db \
     mongo
 
 docker stop mongodb
