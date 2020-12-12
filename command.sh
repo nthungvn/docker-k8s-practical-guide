@@ -15,13 +15,21 @@ docker run -d --rm \
 docker stop mongodb
 
 
+
+
 docker build -t ms-backend:latest .
 
-docker run -d --rm \
+docker run \
+    -d \
+    --rm \
     -p 80:80 \
     --name ms-backend-app \
+    -e MONGO_USERNAME=mongodb \
+    -e MONGO_PASSWORD=root \
     --network multiple-services \
     -v ms-backend-log:/app/logs \
+    -v /Users/nthung/Repos/docker-k8s-practical-guide/backend:/app \
+    -v /app/node_modules \
     ms-backend:latest
 
 docker rm ms-backend-app
