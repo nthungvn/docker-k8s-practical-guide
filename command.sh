@@ -7,6 +7,8 @@ docker network create multiple-services
 docker run -d --rm \
     --name mongodb \
     --network multiple-services \
+    -e MONGO_INITDB_ROOT_USERNAME=mongodb \
+    -e MONGO_INITDB_ROOT_PASSWORD=root \
     -v /Users/nthung/Repos/docker-k8s-practical-guide/mount-volume/mongodb:/data/db \
     mongo
 
@@ -23,7 +25,7 @@ docker run -d --rm \
     ms-backend:latest
 
 docker rm ms-backend-app
-docker logs ms-backend-app
+docker logs -f ms-backend-app
 docker stop ms-backend-app
 
 docker build -t ms-frontend:latest --build-arg DEFAULT_BACK_END_PORT=80 .
