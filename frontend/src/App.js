@@ -14,7 +14,7 @@ function App() {
       setIsLoading(true);
 
       try {
-        const response = await fetch(`http://ms-backend-app:${process.env.BACK_END_PORT}/goals`);
+        const response = await fetch(`http://ms-backend-app:${process.env.REACT_APP_BACK_END_PORT}/goals`);
 
         const resData = await response.json();
 
@@ -39,7 +39,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`http://ms-backend-app:${process.env.BACK_END_PORT}/goals`, {
+      const response = await fetch(`http://ms-backend-app:${process.env.REACT_APP_BACK_END_PORT}/goals`, {
         method: 'POST',
         body: JSON.stringify({
           text: goalText,

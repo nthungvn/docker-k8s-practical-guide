@@ -30,16 +30,16 @@ docker stop ms-backend-app
 
 docker build -t ms-frontend:latest --build-arg DEFAULT_BACK_END_PORT=80 .
 
-docker run \
+docker run -it -d --rm \
     -p 8080:3000 \
     --name ms-frontend-app \
     --network multiple-services \
-    -e BACK_END_PORT=80 \
+    -e REACT_APP_BACK_END_PORT=80 \
     -v /Users/nthung/Repos/docker-k8s-practical-guide/frontend:/app \
     -v /app/node_modules \
     ms-frontend:latest
 
 docker rm ms-frontend-app
-docker logs ms-frontend-app
+docker logs -f ms-frontend-app
 docker start ms-frontend-app
 docker stop ms-frontend-app
