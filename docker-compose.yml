@@ -4,7 +4,19 @@ services:
     image: mongo
     volumes:
       - mongodb-data:/data/db
-
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongodb
+      - MONGO_INITDB_ROOT_PASSWORD=root
+  ms-backend-app:
+    build: ./backend
+    ports:
+      - 80:80
+    env_file: ./env/backend.env
+    volumes:
+      - ms-backend-log:/app/logs
+      - ./backend:/app
+      - /app/node_modules
 
 volumes:
   mongodb-data:
+  ms-backend-log:
