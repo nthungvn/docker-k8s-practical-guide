@@ -22,7 +22,16 @@ services:
       - ./env/mysql.env
     volumes:
       - laravel-data:/var/lib/mysql
-  # composer:
+
+  composer:
+    build:
+      context: ./dockerfiles
+      dockerfile: composer.dockerfile
+    volumes:
+      - ./src:/var/www/html
+    stdin_open: true
+    tty: true
+
   # artisan:
   # npm:
 
