@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #1
-docker run -it node:14
+docker run -it --rm node:14
 
 #2
 docker run -it -d --rm --name node-util node:14
@@ -41,7 +41,7 @@ docker run -it --rm \
   mynpm:latest install -s express
 
 #6
-docker-compose run npm install -D nodemon
+docker-compose run --rm npm install -D nodemon
 
 docker-compose up --build -d
 docker-compose exec mynpm npm install body-parser
