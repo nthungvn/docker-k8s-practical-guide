@@ -38,8 +38,20 @@ services:
     stdin_open: true
     tty: true
 
-  # artisan:
-  # npm:
+  artisan:
+    build:
+      context: ./dockerfiles
+      dockerfile: php.dockerfile
+    volumes:
+      - ./src:/var/www/html
+    entrypoint: ['php', '/var/www/html/artisan']
+
+  npm:
+    image: node:14-alpine
+    working_dir: /var/www/html
+    volumes:
+      - ./src:/var/www/html
+    entrypoint: ['npm']
 
 volumes:
   laravel-data:
