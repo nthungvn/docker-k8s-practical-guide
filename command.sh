@@ -43,3 +43,6 @@ docker run -it --rm \
 #6
 docker-compose run npm install -D nodemon
 
+docker-compose up --build -d
+docker-compose exec mynpm npm install body-parser
+docker-compose down
