@@ -1,0 +1,24 @@
+{
+  "name": "node-util",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nthungvn/docker-k8s-practical-guide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nthungvn/docker-k8s-practical-guide/issues"
+  },
+  "homepage": "https://github.com/nthungvn/docker-k8s-practical-guide#readme"
+}
