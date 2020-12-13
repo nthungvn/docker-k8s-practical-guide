@@ -39,3 +39,7 @@ docker run -it --rm \
   -v /app/node_modules \
   --name mynpm \
   mynpm:latest install -s express
+
+#6
+docker-compose run npm install -D nodemon
+

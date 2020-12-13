@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  npm:
+    build: ./
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    stdin_open: true
+    tty: true
