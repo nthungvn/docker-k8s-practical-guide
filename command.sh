@@ -25,3 +25,17 @@ docker exec -it node-util npm init
 docker exec -it node-util npm install -s express
 
 docker stop node-util
+
+#5
+docker build -t mynpm:latest .
+docker run -it --rm \
+  -v /Users/nthung/Repos/docker-k8s-practical-guide:/app \
+  -v /app/node_modules \
+  --name mynpm \
+  mynpm:latest init
+
+docker run -it --rm \
+  -v /Users/nthung/Repos/docker-k8s-practical-guide:/app \
+  -v /app/node_modules \
+  --name mynpm \
+  mynpm:latest install -s express
