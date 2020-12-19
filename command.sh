@@ -8,3 +8,10 @@ kubectl get deployment
 kubectl expose deployment k8s-first-deployment --type=LoadBalancer --port=8080
 
 minikube service k8s-first-deployment
+
+kubectl get service
+kubectl get pods
+
+kubectl scale deployment/k8s-first-deployment --replicas=3
+kubectl get pods
+kubectl scale deployment/k8s-first-deployment --replicas=1
