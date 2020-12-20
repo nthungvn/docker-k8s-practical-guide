@@ -35,3 +35,9 @@ kubectl get pods
 kubectl rollout history deployment/k8s-first-deployment
 kubectl rollout history deployment/k8s-first-deployment --revision=3
 kubectl rollout undo deployment/k8s-first-deployment --to-revision=1
+
+
+
+## Deployment Declarative
+kubectl apply -f deployment.yaml
+
