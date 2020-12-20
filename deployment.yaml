@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: k8s-third-deployment
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: third-app
@@ -21,3 +22,9 @@ spec:
               httpGet:
                 path: /story
                 port: 300
+          volumeMounts:
+            - mountPath: /app/story
+              name: story-folder
+      volumes:
+        - name: story-folder
+          emptyDir: {}
