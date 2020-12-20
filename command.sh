@@ -41,3 +41,6 @@ kubectl rollout undo deployment/k8s-first-deployment --to-revision=1
 ## Deployment Declarative
 kubectl apply -f deployment.yaml
 
+# Service Declarative
+kubectl apply -f service.yaml
+minikube service k8s-second-service
