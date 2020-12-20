@@ -27,4 +27,6 @@ spec:
               name: story-folder
       volumes:
         - name: story-folder
-          emptyDir: {}
+          hostPath:
+              path: /data
+              type: DirectoryOrCreate
