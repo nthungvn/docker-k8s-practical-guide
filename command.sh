@@ -48,3 +48,4 @@ minikube service k8s-second-service
 # Update Pods
 # Edit the depoyment.yaml
 kubectl apply -f deployment.yaml
+kubectl delete -f deployment.yaml -f service.yaml
