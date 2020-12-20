@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-third-deployment
+spec:
+  selector:
+    matchLabels:
+      app: third-app
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: third-app
+        tier: backend
+    spec:
+      containers:
+        - name: third-app
+          image: sunshineaact/k8s-third-app
+          imagePullPolicy: Always
+          livenessProbe:
+              httpGet:
+                path: /story
+                port: 300

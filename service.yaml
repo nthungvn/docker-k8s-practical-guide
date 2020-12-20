@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-third-service
+spec:
+  selector:
+    app: third-app
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 3000
