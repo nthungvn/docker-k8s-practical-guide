@@ -44,3 +44,7 @@ kubectl apply -f deployment.yaml
 # Service Declarative
 kubectl apply -f service.yaml
 minikube service k8s-second-service
+
+# Update Pods
+# Edit the depoyment.yaml
+kubectl apply -f deployment.yaml
