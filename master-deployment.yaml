@@ -33,4 +33,13 @@ spec:
         - name: k8s-first-app
           image: sunshineaact/k8s-first-app
           imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+              # httpHeaders:
+              #   - name:
+              #     value:
+            periodSeconds: 10
+            initialDelaySeconds: 3
 
