@@ -1,11 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: k8s-networking-service
+  name: auth-service
 spec:
   selector:
     app: authentication-app
-    tier: backend
   ports:
     - port: 80
       targetPort: 80

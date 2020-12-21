@@ -1,18 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-networking-deployment
+  name: auth-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: authentication-app
-      tier: backend
   template:
     metadata:
       labels:
         app: authentication-app
-        tier: backend
     spec:
       containers:
         - name: auth
