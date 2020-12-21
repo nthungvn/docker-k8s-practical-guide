@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: third-app
-          image: sunshineaact/k8s-third-app
+          image: sunshineaact/k8s-third-app:3
           imagePullPolicy: Always
           livenessProbe:
               httpGet:
@@ -25,6 +25,9 @@ spec:
           volumeMounts:
             - mountPath: /app/story
               name: story-folder
+          env:
+            - name: STORY_FOLDER
+              value: story
       volumes:
         - name: story-folder
           persistentVolumeClaim:
