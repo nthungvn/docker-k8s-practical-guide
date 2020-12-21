@@ -15,5 +15,10 @@ spec:
       containers:
         - name: auth
           image: sunshineaact/k8s-networking-auth
+          imagePullPolicy: Always
         - name: users
           image: sunshineaact/k8s-networking-users
+          imagePullPolicy: Always
+          env:
+            - name: AUTH_ADDRESS
+              value: localhost
