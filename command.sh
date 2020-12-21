@@ -20,3 +20,7 @@ docker build -t sunshineaact/k8s-third-app .
 docker tag sunshineaact/k8s-third-app sunshineaact/k8s-third-app:3
 docker push sunshineaact/k8s-third-app:3
 kubectl apply -f deployment.yaml
+
+# ENV: config map
+kubectl apply -f environment.yaml
+kubectl apply -f deployment.yaml

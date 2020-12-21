@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: k8s-third-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: third-app
@@ -27,7 +27,10 @@ spec:
               name: story-folder
           env:
             - name: STORY_FOLDER
-              value: story
+              valueFrom:
+                configMapKeyRef:
+                  name: environment
+                  key: story-folder
       volumes:
         - name: story-folder
           persistentVolumeClaim:
