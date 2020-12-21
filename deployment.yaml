@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: k8s-networking-deployment
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: authentication-app
@@ -16,3 +17,5 @@ spec:
       containers:
         - name: auth
           image: sunshineaact/k8s-networking-auth
+        - name: users
+          image: sunshineaact/k8s-networking-users
