@@ -13,7 +13,8 @@ docker push sunshineaact/k8s-networking-auth
 kubectl apply \
   -f auth-deployment.yaml -f auth-service.yaml \
   -f users-deployment.yaml -f users-service.yaml \
-  -f tasks-deployment.yaml -f tasks-service.yaml
+  -f tasks-deployment.yaml -f tasks-service.yaml \
+  -f tasks-ui-deployment.yaml -f tasks-ui-service.yaml
 
 minikube service users-service
 minikube service tasks-service

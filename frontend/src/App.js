@@ -8,7 +8,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   const fetchTasks = useCallback(function () {
-    fetch(`${process.env.REACT_APP_TASKS_URL}/tasks`, {
+    fetch('/api/tasks', {
       headers: {
         'Authorization': 'Bearer abc'
       }
@@ -29,7 +29,7 @@ function App() {
   );
 
   function addTaskHandler(task) {
-    fetch(`${process.env.REACT_APP_TASKS_URL}/tasks`, {
+    fetch('/api/tasks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
