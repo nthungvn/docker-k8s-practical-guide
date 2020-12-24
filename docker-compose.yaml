@@ -16,4 +16,9 @@ services:
     environment:
       TASKS_FOLDER: tasks
       AUTH_ADDRESS: auth
-
+  tasks-ui:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      TASKS_URL: http://127.0.0.1:55258

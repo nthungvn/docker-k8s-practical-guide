@@ -17,3 +17,7 @@ kubectl apply \
 
 minikube service users-service
 minikube service tasks-service
+
+
+docker tag docker-k8s-practical-guide_auth sunshineaact/k8s-networking-tasks-ui
+docker push sunshineaact/k8s-networking-tasks-ui
