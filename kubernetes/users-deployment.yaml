@@ -18,5 +18,5 @@ spec:
           imagePullPolicy: Always
           env:
             - name: AUTH_ADDRESS
-              value: auth-service
+              value: auth-service.default
               # value: 10.111.207.69

@@ -18,6 +18,6 @@ spec:
           imagePullPolicy: Always
           env:
             - name: AUTH_ADDRESS
-              value: auth-service
+              value: auth-service.default
             - name: TASKS_FOLDER
               value: tasks
