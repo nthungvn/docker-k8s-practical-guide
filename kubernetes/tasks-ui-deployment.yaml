@@ -16,6 +16,3 @@ spec:
         - name: tasks-ui
           image: sunshineaact/k8s-networking-tasks-ui
           imagePullPolicy: Always
-          env:
-            - name: TASKS_URL
-              value: http://127.0.0.1:55258

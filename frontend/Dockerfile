@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+ARG REACT_APP_TASKS_URL=http://127.0.0.1:8000
+
 RUN npm run build
 
 FROM nginx:1.19-alpine

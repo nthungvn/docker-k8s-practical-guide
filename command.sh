@@ -18,6 +18,10 @@ kubectl apply \
 minikube service users-service
 minikube service tasks-service
 
-
+docker-compose build
 docker tag docker-k8s-practical-guide_tasks-ui sunshineaact/k8s-networking-tasks-ui
 docker push sunshineaact/k8s-networking-tasks-ui
+
+kubectl apply -f tasks-ui-deployment.yaml -f tasks-ui-service.yaml
+
+minikube service tasks-ui-service
