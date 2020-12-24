@@ -1,5 +1,12 @@
 version: "3"
 services:
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - mongo:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
   auth:
     build: ./auth-api
     ports:
@@ -11,5 +18,7 @@ services:
     ports:
       - '8080:3000'
     environment:
-      MONGODB_CONNECTION_URI: 'mongodb+srv://maximilian:wk4nFupsbntPbB3l@cluster0.ntrwp.mongodb.net/users?retryWrites=true&w=majority'
+      MONGODB_CONNECTION_URI: 'mongodb://root:example@mongodb:27017/users?retryWrites=true&w=majority'
       AUTH_API_ADDRESSS: 'auth:3000'
+volumes:
+  mongo:
