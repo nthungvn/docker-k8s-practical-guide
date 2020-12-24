@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasks-ui-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tasks-ui-app
+  template:
+    metadata:
+      labels:
+        app: tasks-ui-app
+    spec:
+      containers:
+        - name: tasks-ui
+          image: sunshineaact/k8s-networking-tasks-ui
+          imagePullPolicy: Always
+          env:
+            - name: TASKS_URL
+              value: http://127.0.0.1:55258
