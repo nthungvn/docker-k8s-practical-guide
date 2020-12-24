@@ -19,3 +19,4 @@ spec:
           env:
             - name: AUTH_ADDRESS
               value: auth-service
+              # value: 10.111.207.69
