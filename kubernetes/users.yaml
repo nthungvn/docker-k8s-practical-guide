@@ -31,5 +31,12 @@ spec:
           env:
             - name: MONGODB_CONNECTION_URI
               value: 'mongodb://root:example@mongodb-service:27017/users?retryWrites=true&w=majority&authSource=admin'
-            - name: AUTH_API_ADDRESSS
+            - name: AUTH_API_ADDRESS
               value: 'auth-service.default:3000'
+          volumeMounts:
+            - mountPath: /app/users
+              name: users-folder
+      volumes:
+        - name: users-folder
+          persistentVolumeClaim:
+            claimName: user-folder-claim
