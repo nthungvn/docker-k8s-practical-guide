@@ -9,6 +9,7 @@ spec:
     - port: 3000
       targetPort: 3000
       protocol: TCP
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -28,6 +29,6 @@ spec:
           image: sunshineaact/kub-dep-tasks:latest
           env:
             - name: MONGODB_CONNECTION_URI
-              value: mongodb://root:example@mongodb:27017/tasks?retryWrites=true&w=majority&authSource=admin
+              value: mongodb://root:example@mongodb-service:27017/tasks?retryWrites=true&w=majority&authSource=admin
             - name: AUTH_API_ADDRESS
               value: auth:3000
