@@ -39,4 +39,4 @@ spec:
       volumes:
         - name: users-folder
           persistentVolumeClaim:
-            claimName: user-folder-claim
+            claimName: users-folder-claim
