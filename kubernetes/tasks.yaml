@@ -31,4 +31,4 @@ spec:
             - name: MONGODB_CONNECTION_URI
               value: mongodb://root:example@mongodb-service:27017/tasks?retryWrites=true&w=majority&authSource=admin
             - name: AUTH_API_ADDRESS
-              value: auth:3000
+              value: auth-service:3000
