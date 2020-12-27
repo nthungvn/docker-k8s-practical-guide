@@ -11,3 +11,4 @@ spec:
     path: /data
     type: DirectoryOrCreate
   storageClassName: standard
+  volumeMode: Filesystem
