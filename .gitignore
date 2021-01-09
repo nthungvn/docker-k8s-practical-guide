@@ -300,3 +300,7 @@ nginx/nthung.vlvn.cf/ca_bundle.crt
 nginx/nthung.vlvn.cf/cert.crt
 nginx/nthung.vlvn.cf/certificate.crt
 nginx/nthung.vlvn.cf/private.key
+nginx/jenkins.nthung.vlvn.cf/ca_bundle.crt
+nginx/jenkins.nthung.vlvn.cf/cert.crt
+nginx/jenkins.nthung.vlvn.cf/certificate.crt
+nginx/jenkins.nthung.vlvn.cf/private.key
