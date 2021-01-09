@@ -37,8 +37,14 @@ sudo docker run \
   --network webapp-net \
   sunshineaact/webapp:latest
 
+sudo docker run \
+  -d --rm \
+  --name jenkins \
+  --network webapp-net \
+  jenkins:latest
+
 sudo docker logs -f nginx
-sudo docker stop nginx webapp
+sudo docker stop nginx webapp jenkins
 
 sudo docker image prune -a
 sudo docker ps -a
