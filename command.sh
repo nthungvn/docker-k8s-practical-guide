@@ -24,7 +24,8 @@ sudo docker pull sunshineaact/webapp:latest
 sudo docker network create webapp-net
 
 sudo docker run \
-  -d --rm \
+  -d \
+  --rm \
   --name nginx \
   -p 80:80 \
   -p 443:443 \
@@ -32,13 +33,15 @@ sudo docker run \
   sunshineaact/nginx:latest
 
 sudo docker run \
-  -d --rm \
+  -d \
+  --rm \
   --name webapp \
   --network webapp-net \
   sunshineaact/webapp:latest
 
 sudo docker run \
-  -d --rm \
+  -d \
+  --rm \
   --name jenkins \
   --network webapp-net \
   -v /home/ec2-user/jenkins_home:/var/jenkins_home \
