@@ -56,6 +56,7 @@ sudo docker run \
   mysql:5.7
 
 sudo docker run \
+  -d \
   --rm \
   --name mksmart \
   --network webapp-net \
