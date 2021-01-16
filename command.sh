@@ -45,8 +45,29 @@ sudo docker run \
   -v /var/run/docker.sock:/var/run/docker.sock \
   docker-k8s-rize_jenkins:latest
 
+sudo docker run \
+  -d \
+  --rm \
+  --name mysql \
+  --network webapp-net \
+  -v mksmart-db:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=change-pass-here \
+  -e MYSQL_DATABASE=mksmart-db \
+  mysql:5.7
+
+sudo docker run \
+  --rm \
+  --name mksmart \
+  --network webapp-net \
+  -e DATABASE_NAME=mksmart-db \
+  -e DATABASE_USERNAME=root \
+  -e DATABASE_PASSWORD=change-pass-here \
+  -e DATABASE_HOST=mysql \
+  -e FORCE_CREATE_DATABASE=true \
+  mksmart-web:latest
+
 sudo docker logs -f nginx
-sudo docker stop nginx webapp jenkins
+sudo docker stop nginx webapp jenkins mysql mksmart
 
 sudo docker image prune -a
 sudo docker ps -a
