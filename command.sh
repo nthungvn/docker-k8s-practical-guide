@@ -67,7 +67,7 @@ sudo docker run \
   -e DATABASE_USERNAME=root \
   -e DATABASE_PASSWORD=change-pass-here \
   -e DATABASE_HOST=mysql \
-  -e FORCE_CREATE_DATABASE=true \
+  -e FORCE_CREATE_DATABASE=false \
   mksmart-web:latest
 
 sudo docker logs -f nginx
