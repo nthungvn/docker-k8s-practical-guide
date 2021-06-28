@@ -12,7 +12,7 @@ docker push sunshineaact/nginx:latest
 docker push sunshineaact/webapp:latest
 
 #Remote machine
-ssh -i "aws-ec2-key.pem" ec2-user@ec2-18-217-179-157.us-east-2.compute.amazonaws.com
+ssh -i "aws-ec2-key.pem" ec2-user@ec2-18-118-206-111.us-east-2.compute.amazonaws.com
 
 sudo docker rmi sunshineaact/nginx:latest
 sudo docker pull sunshineaact/nginx:latest
