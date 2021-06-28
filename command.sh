@@ -42,15 +42,6 @@ sudo docker run \
 sudo docker run \
   -d \
   --rm \
-  --name jenkins \
-  --network webapp-net \
-  -v /home/ec2-user/jenkins_home:/var/jenkins_home \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  docker-k8s-rize_jenkins:latest
-
-sudo docker run \
-  -d \
-  --rm \
   --name mysql \
   --network webapp-net \
   -v mksmart-db:/var/lib/mysql \
@@ -71,7 +62,7 @@ sudo docker run \
   mksmart-web:latest
 
 sudo docker logs -f nginx
-sudo docker stop nginx webapp jenkins mysql mksmart
+sudo docker stop nginx webapp mysql mksmart
 
 sudo docker image prune -a
 sudo docker ps -a
