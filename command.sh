@@ -70,3 +70,9 @@ sudo docker ps -a
 # Oracle Compute
 ssh -i 1g1core1_ubuntu_at_168.138.202.6.key ubuntu@168.138.202.6
 ssh -i 1g1core2_ubuntu_at_138.3.210.221.key ubuntu@138.3.210.221
+
+# Unzip all certificates
+for f in `ls -1 *.zip`; do unzip $f -d `basename $f .zip`; done
+
+# Start Mac Jenkins Slave
+java -jar agent.jar -jnlpUrl http://138.3.210.221:8080/computer/HungsMac/jenkins-agent.jnlp -secret 9b9157a2298bc36fe6982fd64df16cab8d4b42f462c660bbbb3d19677697ec4f -workDir "/Users/nthung/jenkins_slave_home"
