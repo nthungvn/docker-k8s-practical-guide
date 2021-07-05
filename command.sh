@@ -66,3 +66,7 @@ sudo docker stop nginx webapp mysql mksmart
 
 sudo docker image prune -a
 sudo docker ps -a
+
+# Oracle Compute
+ssh -i 1g1core1_ubuntu_at_168.138.202.6.key ubuntu@168.138.202.6
+ssh -i 1g1core2_ubuntu_at_138.3.210.221.key ubuntu@138.3.210.221
