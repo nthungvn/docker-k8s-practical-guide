@@ -3,7 +3,7 @@ FROM nginx:stable-alpine
 WORKDIR /etc/nginx/conf.d
 
 COPY ./nginx/nginx.conf ./default.conf
-COPY ./nginx/sites/ ./
+COPY ./nginx/sites/ ./sites
 
 # Copy https cert
 COPY ./nginx/nthung.vlvn.cf/ ./nthung.vlvn.cf/
