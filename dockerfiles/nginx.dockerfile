@@ -4,6 +4,7 @@ WORKDIR /etc/nginx/conf.d
 
 COPY ./nginx/nginx.conf ./default.conf
 COPY ./nginx/sites/ ./sites/
+COPY ./nginx/sites/shared/ ./sites/shared/
 
 # Copy https cert
 COPY ./nginx/nthung.vlvn.cf/ ./nthung.vlvn.cf/
