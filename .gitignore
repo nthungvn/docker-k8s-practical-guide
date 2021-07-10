@@ -299,3 +299,4 @@ dmypy.json
 *.crt
 *.key
 *.pub
+*.jar
