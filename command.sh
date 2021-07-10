@@ -36,6 +36,7 @@ sudo docker run \
   -d \
   --rm \
   --name webapp \
+  -p 8080:8080 \
   --network webapp-net \
   sunshineaact/webapp:latest
 
@@ -54,6 +55,7 @@ sudo docker run \
   --rm \
   --name mksmart \
   --network webapp-net \
+  -p 3000:3000 \
   -e DATABASE_NAME=mksmart-db \
   -e DATABASE_USERNAME=root \
   -e DATABASE_PASSWORD=change-pass-here \
@@ -62,7 +64,10 @@ sudo docker run \
   mksmart-web:latest
 
 sudo docker logs -f nginx
-sudo docker stop nginx webapp mysql mksmart
+sudo docker stop nginx
+sudo docker stop webapp
+sudo docker stop mysql
+sudo docker stop mksmart
 
 sudo docker image prune -a
 sudo docker ps -a
