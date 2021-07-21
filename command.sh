@@ -23,6 +23,8 @@ sudo docker pull sunshineaact/webapp:latest
 
 sudo docker network create webapp-net
 
+sudo docker logs -f nginx
+sudo docker stop nginx
 sudo docker run \
   -d \
   --rm \
