@@ -1,0 +1,35 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - mongo:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+  auth:
+    build: auth-api
+    ports:
+      - '8000:3000'
+    environment:
+      TOKEN_KEY: 'shouldbeverysecure'
+    depends_on:
+      - mongodb
+  users:
+    build: users-api
+    ports:
+      - '8080:3000'
+    environment:
+      MONGODB_CONNECTION_URI: 'mongodb://root:example@mongodb:27017/users?retryWrites=true&w=majority&authSource=admin'
+      AUTH_API_ADDRESS: 'auth:3000'
+    depends_on:
+      - auth
+  tasks:
+    build: tasks-api
+    ports:
+      - '3000:3000'
+    environment:
+      MONGODB_CONNECTION_URI: 'mongodb://root:example@mongodb:27017/tasks?retryWrites=true&w=majority&authSource=admin'
+      AUTH_API_ADDRESS: 'auth:3000'
+volumes:
+  mongo:

@@ -1,4 +1,4 @@
 .node_modules
 Dockerfile
 .git
-command.sh
+15-k8s-deployment-fake/command.sh
