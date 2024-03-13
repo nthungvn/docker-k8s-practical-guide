@@ -8,7 +8,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
   auth:
-    build: ./auth-api
+    build: auth-api
     ports:
       - '8000:3000'
     environment:
@@ -16,7 +16,7 @@ services:
     depends_on:
       - mongodb
   users:
-    build: ./users-api
+    build: users-api
     ports:
       - '8080:3000'
     environment:
@@ -25,7 +25,7 @@ services:
     depends_on:
       - auth
   tasks:
-    build: ./tasks-api
+    build: tasks-api
     ports:
       - '3000:3000'
     environment:
