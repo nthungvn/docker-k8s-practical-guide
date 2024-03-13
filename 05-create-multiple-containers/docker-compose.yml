@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    volumes:
+      - mongodb-data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongodb
+      - MONGO_INITDB_ROOT_PASSWORD=root
+
+  ms-backend-app:
+    build: ./backend
+    container_name: ms-backend-app
+    ports:
+      - 80:80
+    env_file: ./env/backend.env
+    volumes:
+      - ms-backend-log:/app/logs
+      - ./backend:/app
+      - /app/node_modules
+    depends_on:
+      - mongodb
+
+  ms-frontend-app:
+    build:
+      context: ./frontend
+      args:
+        - DEFAULT_BACK_END_PORT=80
+        - DEFAULT_BACK_END_HOST=localhost
+    container_name: 'ms-frontend-app'
+    ports:
+      - 8080:3000
+    env_file: ./env/frontend.env
+    volumes:
+      - ./frontend/src:/app/src
+      - /app/node_modules
+    depends_on:
+      - ms-backend-app
+    stdin_open: true
+    tty: true
+
+volumes:
+  mongodb-data:
+  ms-backend-log:
