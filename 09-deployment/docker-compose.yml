@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  nginx:
+    build:
+      context: ..
+      dockerfile: dockerfiles/nginx.dockerfile
+
+  webapp:
+    build:
+      context: ..
+      dockerfile: dockerfiles/webapp.dockerfile
