@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-third-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: third-app
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: third-app
+        tier: backend
+    spec:
+      containers:
+        - name: third-app
+          image: sunshineaact/k8s-third-app:3
+          imagePullPolicy: Always
+          livenessProbe:
+              httpGet:
+                path: /story
+                port: 300
+          volumeMounts:
+            - mountPath: /app/story
+              name: story-folder
+          env:
+            - name: STORY_FOLDER
+              valueFrom:
+                configMapKeyRef:
+                  name: environment
+                  key: story-folder
+      volumes:
+        - name: story-folder
+          persistentVolumeClaim:
+              claimName: host-pvc
