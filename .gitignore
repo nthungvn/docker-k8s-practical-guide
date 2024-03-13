@@ -296,7 +296,7 @@ dmypy.json
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
 aws-ec2-key.pem
-nginx/nthung.vlvn.cf/ca_bundle.crt
-nginx/nthung.vlvn.cf/cert.crt
-nginx/nthung.vlvn.cf/certificate.crt
-nginx/nthung.vlvn.cf/private.key
+09-deployment/nginx/nthung.vlvn.cf/ca_bundle.crt
+09-deployment/nginx/nthung.vlvn.cf/cert.crt
+09-deployment/nginx/nthung.vlvn.cf/certificate.crt
+09-deployment/nginx/nthung.vlvn.cf/private.key
